@@ -1,0 +1,19 @@
+.card-body{
+    display: flex;
+    align-items: end;
+    min-height: 120px;
+}
+
+form{
+    div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        label{
+            width: 100%;
+        }
+        .rdbLabel{
+            width: 20%;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+button, p{
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+    border: none;
+    height: 100%;
+    width: 150px;
+}
+
+button:hover{
+    background-color: rgba(160, 143, 143, 0.26);
+}
+
+#user{
+    width: fit-content;
+    display: flex;
+}
+
+#user p{
+    margin-bottom: 0;
+    text-align: center;
+    height: 100%;
+    align-content: center;
+}
+
+.navbar{
+    width: 100vw;
+    display: flex;
+    padding: 0;
+    height: 50px;
+}
+
+.container-fluid{
+    padding: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.show{
+    background-color: rgba(0, 0, 0, 0.75);
+    div{
+        padding: 0;
+        width: 100%;
+        ul{
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: start;
+            width: 100%;
+            li, #user{
+                height: 10%;
+                width: 100%;
+                button{
+                    width: 100%;
+                    text-align: start;
+                }
+                p{
+                    text-align: start;
+                }
+            }
+        }
+    }
+}
+
+.offcanvas-header{
+    height: 5%;
+    color: white;
+}
+
+.offcanvas-body{
+    height: 50px;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+li{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#loggedin{
+    display: flex;
+    justify-content: flex-end;
+}

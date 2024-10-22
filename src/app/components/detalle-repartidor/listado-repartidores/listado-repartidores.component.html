@@ -1,0 +1,11 @@
+<div class="mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5 repartidores">
+        @if(repartidoresCargados){
+            <li class="list-group-item d-flex justify-content-start lh-lg" *ngFor="let repartidor of repartidores" (click)="elegirRepartidorFn(repartidor)" [class.activo]="isActive(repartidor)">{{repartidor.firstName}} {{repartidor.lastName}}</li>
+        }
+        @else{
+            <div class="spinner-border" role="status">
+            </div>
+        }
+    </div>
+  </div>

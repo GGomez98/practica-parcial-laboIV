@@ -1,0 +1,11 @@
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+  <span class="text-primary">Paises</span>
+</h4>
+<ul class="list-group mb-3 paises">
+  @for(pais of paises; track pais.id){
+    <li class="list-group-item d-flex justify-content-between lh-sm" (click)="elegirPaisFn(pais)" [class.activo]="isActive(pais)">
+      <small class="text-muted">{{pais.nombre}}</small>
+      <img src={{pais.bandera}} alt={{pais.nombre}} class="bandera">
+    </li>
+  }
+</ul>

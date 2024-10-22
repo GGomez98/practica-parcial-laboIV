@@ -1,0 +1,8 @@
+<div class="h-100 p-5 bg-light border rounded-3">
+    @if(repartidor){
+        <img src="{{repartidor.country.bandera}}" alt="">
+        <h2>{{repartidor.country.nombre}}</h2>
+        <p>Region: {{repartidor.country.region}}</p>
+        <p>Capital: {{repartidor.country.capital[0]}}</p>
+    }
+</div>

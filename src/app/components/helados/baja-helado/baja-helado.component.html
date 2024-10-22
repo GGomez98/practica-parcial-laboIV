@@ -1,0 +1,74 @@
+<div class="col">
+  <div class="card mb-4 rounded-3 shadow-sm">
+    <div class="card-header py-3">
+      <h4 class="my-0 fw-normal">Eliminar Helado</h4>
+    </div>
+    @if(helado){
+      <form [formGroup]="form" class="needs-validation" novalidate="">
+        <div class="row g-3">
+          <div class="col-sm-10">
+            <label for="tipo" class="form-label">Tipo</label>
+            <input type="radio" id="Agua" formControlName="tipo" value="Agua" name="tipo" formControlName="tipo" [(ngModel)]="helado.tipo">
+            <label for="Agua" class="rdbLabel">Agua</label>
+
+            <input type="radio" id="Crema" formControlName="tipo" value="Crema" name="tipo" formControlName="tipo" [(ngModel)]="helado.tipo">
+            <label for="Crema" class="rdbLabel">Crema</label>
+          </div>
+  
+          <div class="col-10">
+            <input type="number" class="form-control" id="precio" placeholder="Precio" required="" formControlName = 'precio' [(ngModel)]="helado.precio">
+            <ng-container *ngIf="(precio?.hasError('min')||precio?.hasError('max'))|| precio?.invalid && formularioEnviado">
+              <small class="text-danger">Este campo es requerido y el precio debe ser entre $1000 y $20000</small>
+            </ng-container>
+          </div>
+  
+          <div class="col-10">
+            <input type="number" class="form-control" id="capTransport" placeholder="Peso" required="" formControlName = 'peso' [(ngModel)]="helado.peso">
+            <ng-container *ngIf="(peso?.hasError('min')||peso?.hasError('max'))|| peso?.invalid && formularioEnviado">
+              <small class="text-danger">Este campo es requerido y el peso debe ser entre 250g y 1000g</small>
+            </ng-container>
+          </div>
+          <div class="col-10">
+            <input type="number" class="form-control" id="id" formControlName = 'id' hidden [(ngModel)]="helado.id">
+          </div>
+          <div class="card-body">
+            <button class="w-100 btn btn-lg btn-outline-primary" (click) = 'eliminarHelado()'>Eliminar</button>
+          </div>
+        </div>
+      </form>
+    }
+    @else{
+      <form [formGroup]="form" class="needs-validation" novalidate="">
+        <div class="row g-3">
+          <div class="col-sm-10">
+            <label for="tipo" class="form-label">Tipo</label>
+            <input type="radio" id="Agua" formControlName="tipo" value="Agua" name="tipo" formControlName="tipo">
+            <label for="Agua" class="rdbLabel">Agua</label>
+
+            <input type="radio" id="Crema" formControlName="tipo" value="Crema" name="tipo" formControlName="tipo">
+            <label for="Crema" class="rdbLabel">Crema</label>
+          </div>
+  
+          <div class="col-10">
+            <input type="number" class="form-control" id="precio" placeholder="Precio" required="" formControlName = 'precio'>
+            <ng-container *ngIf="(precio?.hasError('min')||precio?.hasError('max'))|| precio?.invalid && formularioEnviado">
+              <small class="text-danger">Este campo es requerido y el precio debe ser entre $1000 y $20000</small>
+            </ng-container>
+          </div>
+          <div class="col-10">
+            <input type="number" class="form-control" id="capTransport" placeholder="Peso" required="" formControlName = 'peso'>
+            <ng-container *ngIf="(peso?.hasError('min')||peso?.hasError('max'))|| peso?.invalid && formularioEnviado">
+              <small class="text-danger">Este campo es requerido y el peso debe ser entre 250g y 1000g</small>
+            </ng-container>
+          </div>
+          <div class="col-10">
+            <input type="number" class="form-control" id="id" formControlName = 'id' hidden>
+          </div>
+          <div class="card-body">
+            <button class="w-100 btn btn-lg btn-outline-primary">Eliminar</button>
+          </div>
+        </div>
+      </form>
+    }
+  </div>
+</div>

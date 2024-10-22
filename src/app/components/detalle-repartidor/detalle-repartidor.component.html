@@ -1,0 +1,11 @@
+<div class="container py-4">
+    <app-listado-repartidores (elegirRepartidor) = "actualizarRepartidor($event)"></app-listado-repartidores>
+    <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+            <app-info-repartidores [repartidor] = 'repartidor'></app-info-repartidores>
+        </div>
+        <div class="col-md-6">
+            <app-info-pais [repartidor] = 'repartidor'></app-info-pais>
+        </div>
+    </div>
+</div>

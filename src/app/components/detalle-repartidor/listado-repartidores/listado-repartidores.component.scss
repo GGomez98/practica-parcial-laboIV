@@ -1,0 +1,16 @@
+li{
+    width: 100%;
+    text-align: start;
+}
+
+li:hover, .activo{
+    background-color: #888888;
+}
+
+.repartidores{
+    max-height: 200px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

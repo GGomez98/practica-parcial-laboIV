@@ -1,0 +1,15 @@
+<div class="conatiner-fluid">
+    @if(cargando){
+        <div class="spinner-border" role="status">
+        </div>
+    }
+    @else{
+    <div class="info">
+        <h1>Bienvenido!</h1>
+        <img src={{alumno.avatar_url}} alt="">
+        <p>{{alumno.name}}</p>
+        <p>{{alumno.location}}</p>
+        <a href={{alumno.html_url}} target="_blank">Mi Github</a>
+    </div>
+    }
+</div>

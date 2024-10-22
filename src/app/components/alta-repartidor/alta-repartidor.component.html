@@ -1,0 +1,10 @@
+<div class="container p-5">
+    <div class="row g-5">
+      <div class="col-md-7 col-lg-8">
+        <app-form-validado [country]="pais"></app-form-validado>
+      </div>
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <app-listado-paises (elegirPais) = "actualizarPais($event)" [paises] = "listaPaises"></app-listado-paises>
+      </div>
+    </div>
+  </div>

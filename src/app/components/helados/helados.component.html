@@ -1,0 +1,35 @@
+<main>
+    <div class="table-responsive">
+      @if(heladosCargados){
+        <table class="text-center">
+          <thead>
+            <tr>
+              <th style="width: 34%;">Sabor</th>
+              <th style="width: 22%;">Tipo</th>
+              <th style="width: 22%;">Precio</th>
+              <th style="width: 22%;">Peso</th>
+            </tr>
+          </thead>
+              <tbody>
+                <tr class="helados" *ngFor='let helado of helados' (click)="seleccionarHelado(helado)">
+                  <th scope="row" class="text-center">{{helado.sabor}}</th>
+                  <td>{{helado.tipo}}</td>
+                  <td>{{helado.precio}}</td>
+                  <td>{{helado.peso}}</td>
+                </tr>
+              </tbody>
+        </table>
+        }
+        @else{
+          <div class="carga">
+            <div class="spinner-border" role="status">
+            </div>
+          </div>
+        }
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <app-alta-helado (heladosActualizados)="actualizarHelados()"></app-alta-helado>
+        <app-modificacion-helado [helado] = 'heladoSeleccionado' (heladosActualizados)="actualizarHelados()" [formHabilitado] = "formHabilitado"></app-modificacion-helado>
+        <app-baja-helado [helado] = 'heladoSeleccionado' (heladosActualizados)="actualizarHelados()"></app-baja-helado>
+    </div>   
+</main>

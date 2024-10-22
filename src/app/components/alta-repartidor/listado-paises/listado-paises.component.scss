@@ -1,0 +1,16 @@
+.paises{
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+li{
+    display: flex;
+}
+
+li:hover, .activo{
+    background-color: #afafaf;
+}
+
+.bandera{
+    width: 50px;
+}

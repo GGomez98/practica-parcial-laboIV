@@ -1,0 +1,14 @@
+<div class="h-100 p-5 text-white bg-dark rounded-3">
+  @if(repartidor){
+    <h2>{{repartidor.firstName}} {{repartidor.lastName}}</h2>
+    <p>Edad: {{repartidor.age}}</p>
+    <p>Pais: {{repartidor.country.nombre}}</p>
+    <p>Cap. Transporte: {{repartidor.capTransport}}</p>
+    @if(repartidor.ownUnit){
+        <p>Unidad Propia: Si</p>
+    }
+    @else{
+        <p>Unidad Propia: No</p>
+    }
+  }
+</div>

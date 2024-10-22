@@ -1,0 +1,52 @@
+    <h4 class="mb-3">Alta repartidor</h4>
+    <form [formGroup]="form" class="needs-validation" novalidate="">
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="firstName" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="firstName" placeholder="" value="" required="" formControlName = 'firstName'>
+          <ng-container *ngIf="firstName?.hasError('pattern')|| firstName?.invalid && formularioEnviado">
+            <small class="text-danger">Este campo es requerido y sólo debe contener letras</small>
+          </ng-container>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="lastName" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="lastName" placeholder="" value="" required="" formControlName = 'lastName'>
+          <ng-container *ngIf="lastName?.hasError('pattern') || lastName?.invalid && formularioEnviado">
+            <small class="text-danger">Este campo es requerido y sólo debe contener letras</small>
+          </ng-container>
+        </div>
+
+        <div class="col-12">
+          <label for="age" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="age" placeholder="" required="" formControlName = 'age'>
+          <ng-container *ngIf="(age?.hasError('min')||age?.hasError('max'))|| age?.invalid && formularioEnviado">
+            <small class="text-danger">Este campo es requerido y la edad debe ser entre 18 y 99 años</small>
+          </ng-container>
+        </div>
+
+        <div class="col-12">
+          <label for="capTransport" class="form-label">Capacidad de transporte</label>
+          <input type="number" class="form-control" id="capTransport" placeholder="" required="" formControlName = 'capTransport'>
+          <ng-container *ngIf="(capTransport?.hasError('min')||capTransport?.hasError('max'))|| capTransport?.invalid && formularioEnviado">
+            <small class="text-danger">Este campo es requerido y la capacidad de transporte debe ser de entre 1 y 100 potes de helado</small>
+          </ng-container>
+        </div>
+
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="country" placeholder="" value="" required=""  formControlName = 'country' hidden>
+         <ng-container *ngIf="form.get('country')?.invalid && formularioEnviado">
+            <small class="text-danger">Seleccione un pais</small>
+          </ng-container>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="ownUnit" formControlName = 'ownUnit'>
+          <label class="form-check-label" for="ownUnit">Unidad Propia</label>
+        </div>
+      </div>
+
+      <hr class="my-4">
+
+      <button class="w-100 btn btn-primary btn-lg" (click) = enviar() >Dar de Alta</button>
+    </form>
